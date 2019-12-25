@@ -15,14 +15,14 @@ public class SortedField {
     SortedField() {}
     public static Comparator getField(SortedField.Field field)
     {
-        Comparator<IplCensusDAO> battingAverageComparator = Comparator.comparing(census -> census.battingAverage);
-        Comparator<IplCensusDAO> strikeRateComparator = Comparator.comparing(census -> census.battingStrikeRate);
-        Comparator<IplCensusDAO> runsComparator = Comparator.comparing(census -> census.runs);
-        Comparator<IplCensusDAO> ballingAverageComparator = Comparator.comparing(census -> census.ballingAverage);
-        Comparator<IplCensusDAO> ballingStrikeRatesComparator = Comparator.comparing(census -> census.ballingStrikeRate);
-        Comparator<IplCensusDAO> ballingEconomyComparator = Comparator.comparing(census -> census.economy);
-        Comparator<IplCensusDAO> wicketsComparator = Comparator.comparing(census -> census.maximumWickets);
-        Comparator<IplCensusDAO> batsmenRunsComparator = Comparator.comparing(census -> census.runs);
+        Comparator<IplDAO> battingAverageComparator = Comparator.comparing(census -> census.battingAverage);
+        Comparator<IplDAO> strikeRateComparator = Comparator.comparing(census -> census.battingStrikeRate);
+        Comparator<IplDAO> runsComparator = Comparator.comparing(census -> census.runs);
+        Comparator<IplDAO> ballingAverageComparator = Comparator.comparing(census -> census.ballingAverage);
+        Comparator<IplDAO> ballingStrikeRatesComparator = Comparator.comparing(census -> census.ballingStrikeRate);
+        Comparator<IplDAO> ballingEconomyComparator = Comparator.comparing(census -> census.economy);
+        Comparator<IplDAO> wicketsComparator = Comparator.comparing(census -> census.maximumWickets);
+        Comparator<IplDAO> batsmenRunsComparator = Comparator.comparing(census -> census.runs);
 
         sortFieldComparator.put(Field.AVERAGE, battingAverageComparator);
         sortFieldComparator.put(Field.STRIKE_RATE, strikeRateComparator);
@@ -39,7 +39,7 @@ public class SortedField {
         sortFieldComparator.put(Field.BEST_BATTING_AND_BALLING_AVERAGES,battingAverageComparator.thenComparing(ballingAverageComparator));
         sortFieldComparator.put(Field.BEST_PLAYER_WITH_MOST_RUNS_AND_WICKETS,batsmenRunsComparator.thenComparing(wicketsComparator));
 
-        Comparator<IplCensusDAO> csvComparator = sortFieldComparator.get(field);
+        Comparator<IplDAO> csvComparator = sortFieldComparator.get(field);
         return csvComparator;
     }
 }

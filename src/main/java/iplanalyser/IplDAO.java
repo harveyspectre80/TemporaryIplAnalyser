@@ -2,7 +2,7 @@ package iplanalyser;
 
 import java.nio.file.Path;
 
-public class IplCensusDAO {
+public class IplDAO {
 
     public String player;
     public double battingAverage;
@@ -17,7 +17,7 @@ public class IplCensusDAO {
     public double economy;
     public double maximumWickets;
 
-    public IplCensusDAO(IplAnalyserRunsCsv iplAnalyserRunsCsv) {
+    public IplDAO(IplAnalyserRunsCsv iplAnalyserRunsCsv) {
         this.player = iplAnalyserRunsCsv.player;
         this.battingAverage = iplAnalyserRunsCsv.average;
         this.battingStrikeRate = iplAnalyserRunsCsv.strikeRate;
@@ -26,7 +26,7 @@ public class IplCensusDAO {
         this.runs = iplAnalyserRunsCsv.runs;
     }
 
-    public IplCensusDAO(IplAnalyserBowlersCsv iplAnalyserBowlersCsv) {
+    public IplDAO(IplAnalyserBowlersCsv iplAnalyserBowlersCsv) {
         this.player = iplAnalyserBowlersCsv.player;
         this.ballingAverage = iplAnalyserBowlersCsv.average;
         this.ballingStrikeRate = iplAnalyserBowlersCsv.strikeRate;
@@ -36,7 +36,14 @@ public class IplCensusDAO {
         this.maximumWickets=iplAnalyserBowlersCsv.wickets;
     }
 
-    public IplCensusDAO() {
+    public IplDAO() {
+    }
+
+    public IplDAO(String player , int runs, int fours, int sixes) {
+        this.player = player;
+        this.runs = runs;
+        this.fours = fours;
+        this.sixes = sixes;
     }
 
     public Object getIPLDTO (IplAnalyser.PlayType playType)

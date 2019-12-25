@@ -15,11 +15,11 @@ import java.util.stream.StreamSupport;
 
 public abstract class IplAdapter {
 
-    Map<String, IplCensusDAO> iplMap = new HashMap<>();
-    public abstract Map<String, IplCensusDAO> loadIplData(String... iplFilePath) throws IplAnalyserException;
-    protected  <E> Map<String, IplCensusDAO> loadIplData(Class<E> iplClass, String... csvFilePath)
+    Map<String, IplDAO> iplMap = new HashMap<>();
+    public abstract Map<String, IplDAO> loadIplData(IplAnalyser.PlayType playType, String... iplFilePath) throws IplAnalyserException;
+    protected  <E> Map<String, IplDAO> loadIplData(Class<E> iplClass, String... iplFilePath)
             throws IplAnalyserException {
-        try (Reader reader = Files.newBufferedReader(Paths.get(String.valueOf(csvFilePath[0]))))
+        try (Reader reader = Files.newBufferedReader(Paths.get(String.valueOf(iplFilePath[0]))))
         {
             ICVBuilder csvbuilder = CSVBuilderFactory.createCSVBuilder();
             Iterator<E> iplFileIterator = csvbuilder.getCSVFILEIterator(reader, iplClass);
@@ -28,13 +28,13 @@ public abstract class IplAdapter {
             {
                 StreamSupport.stream(iplFileIterable.spliterator(), false)
                         .map(IplAnalyserRunsCsv.class::cast)
-                        .forEach(iplCSV -> iplMap.put(iplCSV.player, new IplCensusDAO(iplCSV)));
+                        .forEach(iplCSV -> iplMap.put(iplCSV.player, new IplDAO(iplCSV)));
             }
             else if (iplClass.getName().equals("iplanalyser.IplAnalyserBowlersCsv"))
             {
                 StreamSupport.stream(iplFileIterable.spliterator(), false)
                         .map(IplAnalyserBowlersCsv.class::cast)
-                        .forEach(iplCSV -> iplMap.put(iplCSV.player, new IplCensusDAO(iplCSV)));
+                        .forEach(iplCSV -> iplMap.put(iplCSV.player, new IplDAO(iplCSV)));
             }
             return iplMap;
         } catch (CSVBuilderException  e) {

@@ -3,7 +3,6 @@ package iplanalyser;
 import com.opencsv.bean.CsvBindByName;
 
 public class IplAnalyserBowlersCsv {
-//    POS,PLAYER              ,Mat,Inns,Ov  ,Runs,Wkts,BBI,Avg  ,Econ ,SR   ,4w,5w
     @CsvBindByName(column = "POS")
     public int position;
     @CsvBindByName(column = "PLAYER")
