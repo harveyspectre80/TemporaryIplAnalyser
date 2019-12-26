@@ -36,7 +36,11 @@ public class IplDAO {
         this.maximumWickets=iplAnalyserBowlersCsv.wickets;
     }
 
-    public IplDAO() {
+    public IplDAO(String player, int fourWickets, int fiveWickets) {
+        this.player = player;
+        this.fourWickets = fourWickets;
+        this.fiveWickets = fiveWickets;
+
     }
 
     public IplDAO(String player , int runs, int fours, int sixes) {
@@ -44,6 +48,9 @@ public class IplDAO {
         this.runs = runs;
         this.fours = fours;
         this.sixes = sixes;
+    }
+
+    public IplDAO(String hardik_pandya, int i, int i1, int i2, int i3) {
     }
 
     public Object getIPLDTO (IplAnalyser.PlayType playType)

@@ -8,9 +8,9 @@ import org.junit.rules.ExpectedException;
 import java.lang.reflect.Type;
 
 public class IplAnalyserTest {
-    public static String IPL_CENSUS_CSV_MOSTRUNS_FILEPATH = "C:\\Users\\Hemil\\Desktop\\IplAnalysermockito\\TemporaryIplAnalyser\\src\\test\\resources\\IPL2019FactsheetMostRuns.csv";
+    public static String IPL_CENSUS_CSV_MOSTRUNS_FILEPATH = "/home/admin1/Desktop/IplAnalyser/TemporaryIplAnalyser/src/test/resources/IPL2019FactsheetMostRuns.csv";
     public static String WRONG_CSV_FILE_PATH = "/home/admin1/iplanalyserproblem/src/test/resources/IPL2019FactsheetMostRuns.cv";
-    public static String IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH = "C:\\Users\\Hemil\\Desktop\\IplAnalysermockito\\TemporaryIplAnalyser\\src\\test\\resources\\IPL2019FactsheetMostWkts.csv";
+    public static String IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH = "/home/admin1/Desktop/IplAnalyser/TemporaryIplAnalyser/src/test/resources/IPL2019FactsheetMostWkts.csv";
 
 
 
@@ -234,10 +234,10 @@ public class IplAnalyserTest {
         String playersData = null;
         try {
             censusAnalyser.setIplAdapter(IplAdaptorFactory.getIplData(IplAnalyser.PlayType.Bowling));
-            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH,IPL_CENSUS_CSV_MOSTRUNS_FILEPATH);
+            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH);
             playersData = censusAnalyser.getSortedDataOfIpl(SortedField.Field.BALLING_AVERAGE);
             IplAnalyserBowlersCsv[] BallingPlayType = new Gson().fromJson(playersData, IplAnalyserBowlersCsv[].class);
-            Assert.assertEquals("Prasidh Krishna", BallingPlayType[BallingPlayType.length-1].player);
+            Assert.assertEquals("Krishnappa Gowtham", BallingPlayType[BallingPlayType.length-1].player);
         } catch (IplAnalyserException e) {
         }
     }
@@ -248,7 +248,7 @@ public class IplAnalyserTest {
         String playersData = null;
         try {
             censusAnalyser.setIplAdapter(IplAdaptorFactory.getIplData(IplAnalyser.PlayType.Bowling));
-            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH,IPL_CENSUS_CSV_MOSTRUNS_FILEPATH);
+            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH);
             playersData = censusAnalyser.getSortedDataOfIpl(SortedField.Field.BEST_BALLING_STRIKE_RATE);
             IplAnalyserBowlersCsv[] BallingPlayType = new Gson().fromJson(playersData, IplAnalyserBowlersCsv[].class);
             Assert.assertEquals("Krishnappa Gowtham", BallingPlayType[BallingPlayType.length-1].player);
@@ -261,7 +261,7 @@ public class IplAnalyserTest {
         IplAnalyser censusAnalyser = new IplAnalyser(IplAnalyser.PlayType.Bowling);
         try {
             censusAnalyser.setIplAdapter(IplAdaptorFactory.getIplData(IplAnalyser.PlayType.Bowling));
-            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH,IPL_CENSUS_CSV_MOSTRUNS_FILEPATH);
+            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH);
             String playersData =  censusAnalyser.getSortedDataOfIpl(SortedField.Field.BOWLING_ECONOMY);
             IplAnalyserBowlersCsv[] BallingPlayType = new Gson().fromJson(playersData, IplAnalyserBowlersCsv[].class);
             Assert.assertEquals("Ben Cutting", BallingPlayType[BallingPlayType.length-1].player);
@@ -275,7 +275,7 @@ public class IplAnalyserTest {
         String playersData = null;
         try {
             censusAnalyser.setIplAdapter(IplAdaptorFactory.getIplData(IplAnalyser.PlayType.Bowling));
-            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH,IPL_CENSUS_CSV_MOSTRUNS_FILEPATH);
+            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH);
             playersData = censusAnalyser.getSortedDataOfIpl(SortedField.Field.BEST_STRIKINGRATE_WITH_5WICKETS_AND_4WICKETS);
             IplAnalyserBowlersCsv[] BallingPlayType = new Gson().fromJson(playersData, IplAnalyserBowlersCsv[].class);
             Assert.assertEquals("Lasith Malinga", BallingPlayType[BallingPlayType.length-1].player);
@@ -289,10 +289,10 @@ public class IplAnalyserTest {
         String playersData = null;
         try {
             censusAnalyser.setIplAdapter(IplAdaptorFactory.getIplData(IplAnalyser.PlayType.Bowling));
-            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH,IPL_CENSUS_CSV_MOSTRUNS_FILEPATH);
+            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH);
             playersData = censusAnalyser.getSortedDataOfIpl(SortedField.Field.BEST_BALLING_AVERAGE_WITH_STRIKERATE);
             IplAnalyserBowlersCsv[] BallingPlayType = new Gson().fromJson(playersData, IplAnalyserBowlersCsv[].class);
-            Assert.assertEquals("Prasidh Krishna", BallingPlayType[BallingPlayType.length-1].player);
+            Assert.assertEquals("Krishnappa Gowtham", BallingPlayType[BallingPlayType.length-1].player);
         } catch (IplAnalyserException e) {
         }
     }
@@ -303,7 +303,7 @@ public class IplAnalyserTest {
         String playersData = null;
         try {
             censusAnalyser.setIplAdapter(IplAdaptorFactory.getIplData(IplAnalyser.PlayType.Bowling));
-            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH,IPL_CENSUS_CSV_MOSTRUNS_FILEPATH);
+            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH);
             playersData = censusAnalyser.getSortedDataOfIpl(SortedField.Field.BEST_BALLING_AVERAGE_WITH_MAXIMUM_WICKETS);
             IplAnalyserBowlersCsv[] BallingPlayType = new Gson().fromJson(playersData, IplAnalyserBowlersCsv[].class);
             Assert.assertEquals("Imran Tahir", BallingPlayType[BallingPlayType.length-1].player);
@@ -317,10 +317,10 @@ public class IplAnalyserTest {
         String playersData = null;
         try {
             censusAnalyser.setIplAdapter(IplAdaptorFactory.getIplData(IplAnalyser.PlayType.Bowling));
-            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH,IPL_CENSUS_CSV_MOSTRUNS_FILEPATH);
+            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTRUNS_FILEPATH,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH);
             playersData = censusAnalyser.getSortedDataOfIpl(SortedField.Field.BEST_BATTING_AND_BALLING_AVERAGES);
             IplAnalyserBowlersCsv[] BallingPlayType = new Gson().fromJson(playersData, IplAnalyserBowlersCsv[].class);
-            Assert.assertEquals("Prasidh Krishna", BallingPlayType[BallingPlayType.length-1].player);
+            Assert.assertEquals("MS Dhoni", BallingPlayType[BallingPlayType.length-1].player);
         } catch (IplAnalyserException e) {
         }
     }
@@ -330,10 +330,10 @@ public class IplAnalyserTest {
         IplAnalyser censusAnalyser = new IplAnalyser(IplAnalyser.PlayType.Bowling);
         try {
             censusAnalyser.setIplAdapter(IplAdaptorFactory.getIplData(IplAnalyser.PlayType.Bowling));
-            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH,IPL_CENSUS_CSV_MOSTRUNS_FILEPATH);
+            censusAnalyser.loadIplCensusData(IplAnalyser.PlayType.Bowling,IPL_CENSUS_CSV_MOSTRUNS_FILEPATH,IPL_CENSUS_CSV_MOSTWICKETS_CSV_FILEPATH);
             String playersData =  censusAnalyser.getSortedDataOfIpl(SortedField.Field.BEST_PLAYER_WITH_MOST_RUNS_AND_WICKETS);
             IplAnalyserBowlersCsv[] BallingPlayType = new Gson().fromJson(playersData, IplAnalyserBowlersCsv[].class);
-            Assert.assertEquals("Imran Tahir", BallingPlayType[BallingPlayType.length-1].player);
+            Assert.assertEquals("Shreyas Iyer", BallingPlayType[BallingPlayType.length-1].player);
         } catch (IplAnalyserException e) {
             e.printStackTrace();
         }

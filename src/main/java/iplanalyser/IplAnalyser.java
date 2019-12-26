@@ -8,8 +8,10 @@ import java.util.stream.Collectors;
 public class IplAnalyser {
 
     private IplAdapter iplAdapter;
+    Map<String , IplDAO> iplMap;
 
     public IplAnalyser() {
+        iplMap =  new HashMap<>();
 
     }
 
@@ -18,7 +20,7 @@ public class IplAnalyser {
     }
 
     public enum PlayType { Batting , Bowling };
-    Map<String , IplDAO> iplMap = new HashMap<>();
+
     private PlayType playType;
 
     public IplAnalyser(PlayType playType)
@@ -27,8 +29,7 @@ public class IplAnalyser {
     }
 
     public int loadIplCensusData(PlayType playType, String... iplFilePath) throws IplAnalyserException {
-
-        iplMap = iplAdapter.loadIplData(playType, iplFilePath);
+        this.iplMap = iplAdapter.loadIplData(playType, iplFilePath);
         return iplMap.size();
     }
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="iplanalyser.IplAnalyserTest" tests="24" skipped="0" failures="0" errors="0" timestamp="2019-12-26T11:16:02" hostname="admin" time="3.739">
+  <properties/>
+  <testcase name="givenIplCensusMostWicketsData_WithWrongFile_ShouldThrowException" classname="iplanalyser.IplAnalyserTest" time="0.021"/>
+  <testcase name="givenIPLCensusMostWicketsData_ShouldReturnTopBowlingStrikeRates_WhenSortedOnIt" classname="iplanalyser.IplAnalyserTest" time="0.464"/>
+  <testcase name="givenIplCensusMostWicketsData_WithWrongHeader_ShouldThrowException" classname="iplanalyser.IplAnalyserTest" time="0.2"/>
+  <testcase name="givenIplCensusMostRunsData_WithWrongFileType_ShouldThrowException" classname="iplanalyser.IplAnalyserTest" time="0.001"/>
+  <testcase name="givenIplCensusMostRunsData_WithWrongHeader_ShouldThrowException" classname="iplanalyser.IplAnalyserTest" time="0.208"/>
+  <testcase name="givenIPLCensusMostRunsData_ShouldReturnTopBattingAverages_WhenSortedOnIt" classname="iplanalyser.IplAnalyserTest" time="0.212"/>
+  <testcase name="givenIPLCensusMostWicketsDataWithTopRunsData_ShouldReturnBestAllRoundPlayer_WhenSortedOnIt" classname="iplanalyser.IplAnalyserTest" time="0.098"/>
+  <testcase name="givenIPLCensusMostWicketsData_ShouldReturnTopBallingStrikeratesWithBestBallingAverage_WhenSortedOnIt" classname="iplanalyser.IplAnalyserTest" time="0.181"/>
+  <testcase name="givenIplCenusMostRunsCsvFile_ReturnCorrectNoOfRecords" classname="iplanalyser.IplAnalyserTest" time="0.186"/>
+  <testcase name="givenIplCenusMostWicketsFile_ReturnCorrectNoOfRecords" classname="iplanalyser.IplAnalyserTest" time="0.161"/>
+  <testcase name="givenIplCensusMostWicketsData_WithWrongFileType_ShouldThrowException" classname="iplanalyser.IplAnalyserTest" time="0.003"/>
+  <testcase name="givenIplCensusMostRunsData_WithWrongFile_ShouldThrowException" classname="iplanalyser.IplAnalyserTest" time="0.0"/>
+  <testcase name="givenIplCensusMostWickets_WithWrongDelimeter_ShouldThrowException" classname="iplanalyser.IplAnalyserTest" time="0.163"/>
+  <testcase name="givenIPLCensusMostRunsData_ShouldReturnTopPlayersWithMostSixAndFoursWithStrikingRate_WhenSortedOnIt" classname="iplanalyser.IplAnalyserTest" time="0.19"/>
+  <testcase name="givenIplCensusMostRunsData_WithWrongDelimeter_ShouldThrowException" classname="iplanalyser.IplAnalyserTest" time="0.177"/>
+  <testcase name="givenIPLCensusMostWicketsData_ShouldReturnTopBallingStrikeratesWith5WicketsAnd4WicketsAverage_WhenSortedOnIt" classname="iplanalyser.IplAnalyserTest" time="0.164"/>
+  <testcase name="givenIPLCensusMostRunsData_ShouldReturnTopPlayersWithMostAverageWithBestAverage_WhenSortedOnIt" classname="iplanalyser.IplAnalyserTest" time="0.183"/>
+  <testcase name="givenIPLCensusMostWicketsData_ShouldReturnTopBowlingAverages_WhenSortedOnIt" classname="iplanalyser.IplAnalyserTest" time="0.168"/>
+  <testcase name="givenIPLCensusMostRunsData_ShouldReturnTopPlayersWithMostAverageWithStrikingRate_WhenSortedOnIt" classname="iplanalyser.IplAnalyserTest" time="0.178"/>
+  <testcase name="givenIPLCensusMostWicketsData_ShouldReturnTopWicketTakerWithBestBallingAverage_WhenSortedOnIt" classname="iplanalyser.IplAnalyserTest" time="0.168"/>
+  <testcase name="givenIPLCensusMostRunsData_ShouldReturnTopBattingStrikeRates_WhenSortedOnIt" classname="iplanalyser.IplAnalyserTest" time="0.178"/>
+  <testcase name="givenIPLCensusMostWicketsData_ShouldReturnTopBowlingEconomy_WhenSortedOnIt" classname="iplanalyser.IplAnalyserTest" time="0.164"/>
+  <testcase name="givenIPLCensusMostRunsData_ShouldReturnTopPlayersWithMostSixAndFours_WhenSortedOnIt" classname="iplanalyser.IplAnalyserTest" time="0.176"/>
+  <testcase name="givenIPLCensusMostWicketsDataWithTopRunsData_ShouldReturnBestAveragePlayer_WhenSortedOnIt" classname="iplanalyser.IplAnalyserTest" time="0.083"/>
+  <system-out><![CDATA[NO_CENSUS_DATA
+NO_CENSUS_DATA
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

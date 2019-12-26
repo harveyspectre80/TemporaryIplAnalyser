@@ -17,6 +17,7 @@ public abstract class IplAdapter {
 
     Map<String, IplDAO> iplMap = new HashMap<>();
     public abstract Map<String, IplDAO> loadIplData(IplAnalyser.PlayType playType, String... iplFilePath) throws IplAnalyserException;
+
     protected  <E> Map<String, IplDAO> loadIplData(Class<E> iplClass, String... iplFilePath)
             throws IplAnalyserException {
         try (Reader reader = Files.newBufferedReader(Paths.get(String.valueOf(iplFilePath[0]))))
